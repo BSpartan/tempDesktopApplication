@@ -6,6 +6,8 @@
 package photographererclient;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,18 +20,71 @@ import javafx.scene.control.Label;
  */
 public class FXMLDocumentController implements Initializable {
     
-    @FXML
-    private Label label;
+    private String photographerCode;
+    private ArrayList<String> usedCodes;
     
     @FXML
-    private void handleButtonAction(ActionEvent event) {
+    private Label codeLabel;
+    
+    @FXML
+    private void newSession(ActionEvent event) {
+        codeLabel.setText(generateNewSessionCode());
+    }
+    
+    @FXML
+    private void printCode(ActionEvent event) {
         System.out.println("You clicked me!");
-        label.setText("Hello World!");
+        codeLabel.setText("Hello World!");
+    }
+    
+    @FXML
+    private void deleteSelectedPhoto(ActionEvent event) {
+        System.out.println("You clicked me!");
+        codeLabel.setText("Hello World!");
+    }
+    
+    @FXML
+    private void uploadPhotos(ActionEvent event) {
+        System.out.println("You clicked me!");
+        codeLabel.setText("Hello World!");
+    }
+    
+    @FXML
+    private void fileLocation(ActionEvent event) {
+        System.out.println("You clicked me!");
+        codeLabel.setText("Hello World!");
+    }
+    
+    private String generateNewSessionCode() {
+        String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        StringBuilder salt = new StringBuilder();
+        Random rnd = new Random();
+        Boolean generatingCode = true;
+        while(generatingCode) {
+            while (salt.length() < 7) {
+                int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+                salt.append(SALTCHARS.charAt(index));
+            }
+            if(!usedCodes.contains(photographerCode + salt.toString().toUpperCase())) {
+                generatingCode = false;
+            }
+        }
+        String saltStr = salt.toString().toUpperCase();
+        
+        saltStr = photographerCode + saltStr;
+        
+        usedCodes.add(saltStr);
+        
+        return saltStr;
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        //DEBUG
+        photographerCode = "BV1";
+        
+        //INIT
+        usedCodes = new ArrayList<>();
     }    
     
 }
