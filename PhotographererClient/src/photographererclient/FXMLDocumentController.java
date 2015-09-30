@@ -5,6 +5,7 @@
  */
 package photographererclient;
 
+import java.awt.Image;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Random;
@@ -13,6 +14,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 
 /**
  *
@@ -22,9 +24,12 @@ public class FXMLDocumentController implements Initializable {
     
     private String photographerCode;
     private ArrayList<String> usedCodes;
+    private ArrayList<Image> sessionImages;
+    private Image selectedImage;    
     
     @FXML
     private Label codeLabel;
+    private ScrollPane scrollLayout;
     
     @FXML
     private void newSession(ActionEvent event) {
@@ -33,6 +38,9 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void printCode(ActionEvent event) {
+        // TEMP 
+        
+        
         System.out.println("You clicked me!");
         codeLabel.setText("Hello World!");
     }
@@ -85,6 +93,7 @@ public class FXMLDocumentController implements Initializable {
         
         //INIT
         usedCodes = new ArrayList<>();
+        sessionImages = new ArrayList<>();
     }    
     
 }

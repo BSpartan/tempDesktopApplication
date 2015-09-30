@@ -14,31 +14,11 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
                   <ImageView fitHeight="450.0" fitWidth="400.0" layoutX="64.0" layoutY="13.0" pickOnBounds="true" style="-fx-border-color: gray; -fx-border-width: 1;" AnchorPane.bottomAnchor="110.0" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="13.0" />
-                  <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="25.0" layoutY="478.0" pickOnBounds="true" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="432.0" AnchorPane.topAnchor="478.0">
-                     <effect>
-                        <Glow />
-                     </effect>
-                  </ImageView>
-                  <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="128.0" layoutY="478.0" pickOnBounds="true" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="128.0" AnchorPane.rightAnchor="329.0" AnchorPane.topAnchor="478.0">
-                     <effect>
-                        <Glow />
-                     </effect>
-                  </ImageView>
-                  <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="224.0" layoutY="478.0" pickOnBounds="true" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="224.0" AnchorPane.rightAnchor="233.0" AnchorPane.topAnchor="478.0">
-                     <effect>
-                        <Glow />
-                     </effect>
-                  </ImageView>
-                  <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="328.0" layoutY="478.0" pickOnBounds="true" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="328.0" AnchorPane.rightAnchor="129.0" AnchorPane.topAnchor="478.0">
-                     <effect>
-                        <Glow />
-                     </effect>
-                  </ImageView>
-                  <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="430.0" layoutY="478.0" pickOnBounds="true" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="430.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="478.0">
-                     <effect>
-                        <Glow />
-                     </effect>
-                  </ImageView>
+                  <ScrollPane layoutY="471.0" prefHeight="102.0" prefWidth="527.0">
+                    <content>
+                      <AnchorPane fx:id="scrollLayout" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="525.0" />
+                    </content>
+                  </ScrollPane>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="250.0">
